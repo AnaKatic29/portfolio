@@ -3,7 +3,7 @@ import React from "react";
 // import { NavLink } from 'react-router-dom'
 import styled from "styled-components";
 import { GmailIcon, LinkedinIcon } from "../components/AllSvgs";
-import { DarkTheme, lightTheme } from "../components/Themes";
+import { lightTheme } from "../components/Themes";
 
 const Icons = styled.div`
   display: flex;
@@ -40,6 +40,7 @@ const SocialIcons = (props) => {
         <a
           style={{ color: "inherit" }}
           target="_blank"
+          rel="noreferrer"
           href={"https://www.linkedin.com/in/ana-katic-bb021b15b/"}
         >
           <LinkedinIcon
@@ -58,6 +59,7 @@ const SocialIcons = (props) => {
         <a
           style={{ color: "inherit" }}
           target="_blank"
+          rel="noreferrer"
           href={"mailto:katicana29@gmail.com"}
         >
           <GmailIcon

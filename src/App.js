@@ -1,6 +1,6 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
-import { DarkTheme, lightTheme } from "./components/Themes";
+import { DarkTheme } from "./components/Themes";
 import { AnimatePresence } from "framer-motion";
 import GlobalStyle from "./globalStyles";
 

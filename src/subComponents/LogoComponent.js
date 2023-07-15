@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { DarkTheme, lightTheme } from '../components/Themes'
+import { lightTheme } from '../components/Themes'
 
 
 
