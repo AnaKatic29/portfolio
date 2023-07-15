@@ -1,11 +1,9 @@
 import { motion } from 'framer-motion'
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import LogoComponent from '../subComponents/LogoComponent'
-import PowerButton from '../subComponents/PowerButton'
 import SocialIcons from '../subComponents/SocialIcons'
-import { YinYang } from './AllSvgs'
 import Intro from './Intro'
 import Me from '../assets/Images/Frame 1 (2).png'
 
@@ -30,14 +28,6 @@ const Container = styled.div`
 padding: 2rem;
 `
 
-const Contact = styled.a`
-color: ${props => props.theme.text};
-position: absolute;
-top: 2rem;
-right: calc(1rem + 2vw);
-text-decoration: none;
-z-index:1;
-`
 
 const BottomBar = styled.div`
 position: absolute;
@@ -50,25 +40,6 @@ display: flex;
 justify-content: space-evenly;
 `
 
-const BLOG = styled(NavLink)`
-color: ${props => props.theme.text};
-position: absolute;
-top: 50%;
-right: calc(1rem + 2vw);
-transform: rotate(90deg) translate(-50%, -50%);
-text-decoration: none;
-z-index:1;
-`
-// const WORK = styled(NavLink)`
-// color: ${props => props.click ? props.theme.body : props.theme.text};
-
-// position: absolute;
-// top: 50%;
-// left: calc(1rem + 2vw);
-// transform: translate(-50%, -50%) rotate(-90deg) ;
-// text-decoration: none;
-// z-index:1;
-// `
 
 const WORK = styled(NavLink)`
 color: ${props => props.click ? props.theme.body : props.theme.text};
@@ -86,14 +57,6 @@ text-decoration: none;
 z-index:1;
 `
 
-const rotate = keyframes`
-from{
-    transform: rotate(0);
-}
-to{
-    transform: rotate(360deg);
-}
-`
 
 const Center = styled.button`
 position: absolute;
@@ -125,26 +88,13 @@ height: ${props => props.click ? '100%' : '0%'};
 z-index:1;
 transition: height 0.5s ease, width 1s ease 0.5s;
 `
-const SubBox = styled.div`
-width: 50%;
-position: relative;
-display: flex;
 
-.pic{
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(0%,100%);
-    width: 100%;
-    height: auto;
-}
-`
 
 const Main = () => {
 
     const [click, setClick] = useState(false);
 
-    const handleClick = () => setClick(!click);
+    const handleClick = () => setClick(false);
 
     return (
         <MainContainer>
@@ -155,18 +105,9 @@ const Main = () => {
                 <SocialIcons theme={click ? 'light' : 'light'} />
                 <ParticleComponent theme='dark' />
 
-                {/* <SubBox>
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 1, delay: 2 }}
-                    >
-                        <img className="pic" src={Me} alt="Profile Pic" />
-                    </motion.div>
-                </SubBox>                 */}
                 <Center click={click}>
-                    <img className="pic" src={Me} alt="Profile Pic" />                
-                    </Center>
+                    <img onClick={()=> handleClick()} className="pic" src={Me} alt="Profile Pic" />                
+                </Center>
                 {/* <Center click={click}>
                     <YinYang onClick={() => handleClick()} width={click ? 120 : 200} height={click ? 120 : 200} fill='currentColor' />
                     <span>click here</span>

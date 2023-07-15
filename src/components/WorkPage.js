@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import styled, { keyframes, ThemeProvider } from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import { DarkTheme } from "./Themes";
 import { motion } from "framer-motion";
 
@@ -41,7 +41,6 @@ const Rotate = styled.span`
   z-index: 1;
 `;
 
-// Framer-motion Configuration
 const container = {
   hidden: { opacity: 0 },
   show: {
